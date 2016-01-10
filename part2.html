@@ -1,8 +1,56 @@
 <!DOCTYPE html>
-<html>
   <head>
+
     <meta charset="utf-8">
-    <title></title>
+
+    <title>Dating Website</title>
+
+    <style media="screen">
+
+     fieldset {
+       background: lightyellow;
+       border: 10px solid yellow;
+       margin-bottom: 10px;
+       width: 720px;
+
+     }
+
+      fieldset label {
+        width:180px;
+        display: inline-block;
+        text-align: right;
+        vertical-align: top;
+      }
+
+
+      /* Class auto-width for
+      The labels of the checkbox and the radio needs to have width:auto
+      For gender radio button enclosed it in span to make it an inline element,
+       to avoid text label being pushed to one side */
+         .auto-width {
+            display: inline-block;
+            width: auto;
+            text-align: right;
+            vertical-align: top;
+         }
+
+      /*class minrange and maxrange to style span text on either side of the input range field*/
+      .minrange {
+          text-align: center;
+          background-color: green;
+       }
+       .maxrange {
+           text-align: center;
+           background-color: magenta;
+        }
+
+
+      textarea {
+        width: 360px;
+        height: 50px;
+      }
+
+    </style>
   </head>
   <body>
     <h1>Please Enter Your Details For Our Dating Webiste !</h1>
@@ -25,12 +73,12 @@
       <input type="text" name="name" id="name" value="" required="" placeholder="Type your Name here">
       <br> <br>
 
-      <label for="gender">Gender:</label>
+      <span class="auto-width"><label for="gender" >Gender:</label></span>
       <input id="gender" type="radio" name="gender" value="male" > Male
       <input id="gender" type="radio" name="gender" value="female"> Female
       <br> <br>
 
-      <label for="age">Age</label>
+      <label for="age">Age:</label>
       <input type="number" id="age" name="age" value="" maxlength="2" min="18" max="99" step="1">
       <br> <br>
 
@@ -57,12 +105,12 @@
     <fieldset>
       <legend>Your Indicators</legend>
 
-    <label for="height">Height:</label> Short
-    <input type="range" name="height" id="height" value="" min="4" step="1"  value="5" max="8"> Tall
-    <br> <br>
+    <label for="height">Height:</label> <span class="minrange">Short</span>
+    <input type="range" name="height" id="height" value="" min="4" step="1"  value="5" max="8"><span class="maxrange"> Tall</span>
+  <br>
 
-    <label for="salary">Salary:</label>Poor
-    <input type="range" name="salary" id="salary" value="" min="20000" max="2000000" value="100000" step="10000"> Rich
+    <label for="salary">Salary:</label> <span class="minrange">Poor</span>
+    <input type="range" name="salary" id="salary" value="" min="20000" max="2000000" value="100000" step="10000"><span class="maxrange"> Rich</span>
     </fieldset>
     <br> <br>
 
@@ -81,7 +129,7 @@
     <textarea name="name" rows="8" cols="20" maxlength="100"></textarea>
     <br> <br>
 
-    <label for="contactMethod">Method to Contact You:</label>
+    <label  class="auto-width" for="contactMethod">Method to Contact You:</label>
     <input id="contactMethod" type="checkbox" name="contactMethod" value="email"> Email
     <input id="contactMethod" type="checkbox" name="contactMethod" value="whatsapp"> Whatsapp
     <input id="contactMethod" type="checkbox" name="contactMethod" value="in-housechat">In-house Chat
